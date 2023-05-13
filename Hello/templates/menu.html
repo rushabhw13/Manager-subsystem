@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Menu{% endblock title %}
+
+{% block body %}
+
+<div class="container ms-auto">
+  <div class="row justify-content-start">
+    {% for menu in menus %}
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="{{ menu.image.url }}" class="card-img-top" alt="{{ menu.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ menu.name }}</h5>
+          <p class="card-text">Price: {{ menu.price }}</p>
+          <p class="card-text">Nutrition Data: {{ menu.nutrition_data }}</p>
+          <p class="card-text">Allergic Data: {{ menu.allergic_data }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="text-center">
+  <a href="/todayspecial.html" class="btn btn-primary">Today's Special</a>
+</div>
+
+{% endblock body %}

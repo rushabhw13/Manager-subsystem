@@ -1,0 +1,49 @@
+{% load static %}
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <title>{% block title %}{% endblock title %}  CloudTable</title>
+</head>
+<body>
+  <nav class="navbar bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/index">CloudTable</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/index">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+              Settings
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/menu">Menu</a></li>
+              <li><a class="dropdown-item" href="/staff">Staff</a></li>
+              <li><a class="dropdown-item" href="/tables">Tables</a></li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="/logout">Logout</a>
+              </li>
+          </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  {% block body %}{% endblock body %}
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<figure class="figure">
+  <img src="{{ restaurant.image.url }}" class="figure-img img-fluid rounded" alt="{{ restaurant.image.url }}">
+  <figcaption class="figure-caption">CloudTable Restaurant</figcaption>
+</figure>
+<div class="text-start">
+  <h1>Restaurant Info</h1>
+  <p>Name: {{ restaurant.name }}</p>
+  <p>Address: {{ restaurant.address }}</p>
+  <p>Opening Hours: {{ restaurant.opening_hours }}</p>
+  <p>Cuisines: {{ restaurant.cuisines }}</p>
+  <p>Location: {{ restaurant.location }}</p>
+  <p>Directions:</p>
+  <p>{{ restaurant.directions }}</p>
+</div>
+{% endblock body %}

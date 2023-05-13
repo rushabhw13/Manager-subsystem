@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Today's Special{% endblock %}
+
+{% block body %}
+  <h1>Today's Special</h1>
+  {% for special in special %}
+    <p>{{ special.name }}</p>
+    <p>{{ special.description }}</p>
+  {% empty %}
+    <p>No special menu available.</p>
+  {% endfor %}
+  <a href="{% url 'update_todays_special' menu.pk %}">Update Today's Special</a>
+
+{% endblock %}
